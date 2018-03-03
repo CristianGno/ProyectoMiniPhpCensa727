@@ -61,7 +61,7 @@ class mdlLogin extends mdlPersona
       $stm->bindParam(3, $this->clave);
       $stm->bindParam(4, $this->foto);
       $stm->bindParam(5, $this->idRol);
-      $stm->bindParam(6, 1);
+      $stm->bindParam(6, $this->estado);
       $resultado = $stm->execute();
       return $resultado;
     }

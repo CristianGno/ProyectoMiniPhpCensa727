@@ -58,7 +58,7 @@ private $modeloLogin;
 
     if (isset($_POST['btnGuardar'])) {
       $this->modeloLogin->__SET('documento', $_POST['txtDocumento']);
-      $this->modeloLogin->__SET('idTipoDocumento', $_POST['TipoDocumento']);
+      $this->modeloLogin->__SET('IdTipoDocumento', $_POST['TipoDocumento']);
       $this->modeloLogin->__SET('nombres', $_POST['txtNombres']);
       $this->modeloLogin->__SET('apellidos', $_POST['txtApellidos']);
       $this->modeloLogin->__SET('celular', $_POST['txtCelular']);
@@ -74,10 +74,18 @@ private $modeloLogin;
       }
       $this->modeloLogin->__SET('idPersona', $ultimoIdValue);
       $this->modeloLogin->__SET('usuario', $_POST['txtUsuario']);
-      $this->modeloLogin->__SET('clave', $_POST['txtClave']);
+      $this->modeloLogin->__SET('clave', trim(sha1($_POST['txtClave'])));
       $this->modeloLogin->__SET('idRol', $_POST['Rol']);
-      $this->modeloLogin->__SET('estado', $_POST['txtClave']);
       $this->modeloLogin->__SET('foto', $_POST['txtFotoFile']);
+      $this->modeloLogin->__SET('estado', 1);
+
+      $usuario = $this->modeloLogin->registrarUsuario();
+
+      if ($persona && $usuario) {
+        echo "Registro exitoso";
+      } else {
+        echo "Error";
+      }
     }
 
     $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();

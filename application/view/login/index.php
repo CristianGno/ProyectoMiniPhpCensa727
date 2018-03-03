@@ -94,8 +94,8 @@
     swal({
            title: "Usuario o contraseña incorrecta",
            type: "error",
-           confermButton: "#3CB371",
-           confermButtonTex: "Aceptar",
+           confirmButton: "#3CB371",
+           confirmButtonTex: "Aceptar",
            closeOnConfirm: false,
            closeOnCancel: false
 
