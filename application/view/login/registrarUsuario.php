@@ -15,9 +15,8 @@
 
               <div class="form-group">
                 <label>Tipo Documento</label>
-                <select name"selTipoDocumento" class="form-control select2" style="width: 100%;">
+                <select name="TipoDocumento" class="form-control">
                   <option selected="selected">Selecciona...</option>
-
                   <?php 
 
                     foreach ($tiposDocumento as $value): ?>
@@ -34,22 +33,22 @@
 
               <div class="form-group">
                 <label>Nombres</label>
-              <input type="text" name="txtDocumento" class="form-control" value="">
+              <input type="text" name="txtNombres" class="form-control" value="">
               </div>
 
               <div class="form-group">
                 <label>Apellidos</label>
-              <input type="text" name="txtDocumento" class="form-control" value="">
+              <input type="text" name="txtApellidos" class="form-control" value="">
               </div>
 
               <div class="form-group">
                 <label>Celular</label>
-              <input type="text" name="txtDocumento" class="form-control" value="">
+              <input type="text" name="txtCelular" class="form-control" value="">
               </div>
 
               <div class="form-group">
                 <label>Direccion</label>
-              <input type="text" name="txtDocumento" class="form-control" value="">
+              <input type="text" name="txtDireccion" class="form-control" value="">
               </div>
 
 
@@ -60,7 +59,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Correo</label>
-              <input type="email" name="txtDocumento" class="form-control" value="">
+              <input type="email" name="txtCorreo" class="form-control" value="">
               </div>
               <!-- /.form-group -->
               <div class="form-group">

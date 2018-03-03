@@ -57,7 +57,14 @@ private $modeloLogin;
   public function registrarUsuario(){
 
     if (isset($_POST['btnGuardar'])) {
-      
+      $this->modeloLogin->__SET('documento', $_POST['txtDocumento']);
+      $this->modeloLogin->__SET('idTipoDocumento', $_POST['TipoDocumento']);
+      $this->modeloLogin->__SET('nombres', $_POST['txtNombres']);
+      $this->modeloLogin->__SET('apellidos', $_POST['txtApellidos']);
+      $this->modeloLogin->__SET('celular', $_POST['txtCelular']);
+      $this->modeloLogin->__SET('direccion', $_POST['txtDireccion']);
+      $this->modeloLogin->__SET('correo', $_POST['txtCorreo']);
+      $persona = $this->modeloLogin->registrarPersona();
     }
 
     $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();
