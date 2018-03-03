@@ -64,7 +64,13 @@ private $modeloLogin;
       $this->modeloLogin->__SET('celular', $_POST['txtCelular']);
       $this->modeloLogin->__SET('direccion', $_POST['txtDireccion']);
       $this->modeloLogin->__SET('correo', $_POST['txtCorreo']);
-      $persona = $this->modeloLogin->registrarPersona();
+
+      if($persona = $this->modeloLogin->registrarPersona() == true){
+        $ultimoId = $this->modeloLogin->ultimoIdPersona();
+        foreach ($ultimoId as $value) {
+          $ultimoIdValue = $value['ultimoIdPersona'];
+        }
+      }
     }
 
     $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();
