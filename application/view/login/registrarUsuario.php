@@ -69,7 +69,7 @@
 
               <div class="form-group">
                 <label>Rol</label>
-              <select name"Rol" class="form-control select2" style="width: 100%;">
+              <select name="Rol" id="" class="form-control">
                 <option selected="selected">Seleccionar un rol...</option>
               
                 <?php foreach($roles as $value) : ?>
@@ -97,7 +97,7 @@
                     &nbsp;&nbsp;Seleccione archivo
                     <input type="file" id="value_file" name="txtFoto">
                   </span>
-                   <input type="text" id="txtFotoFile" name="" value="" style="display: none;">
+                   <input type="text" id="txtFotoFile" name="txtFotoFile" value="" style="display: none;">
                 </div>
 
                 <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">

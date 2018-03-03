@@ -66,11 +66,18 @@ private $modeloLogin;
       $this->modeloLogin->__SET('correo', $_POST['txtCorreo']);
 
       if($persona = $this->modeloLogin->registrarPersona() == true){
+
         $ultimoId = $this->modeloLogin->ultimoIdPersona();
         foreach ($ultimoId as $value) {
           $ultimoIdValue = $value['ultimoIdPersona'];
         }
       }
+      $this->modeloLogin->__SET('idPersona', $ultimoIdValue);
+      $this->modeloLogin->__SET('usuario', $_POST['txtUsuario']);
+      $this->modeloLogin->__SET('clave', $_POST['txtClave']);
+      $this->modeloLogin->__SET('idRol', $_POST['Rol']);
+      $this->modeloLogin->__SET('estado', $_POST['txtClave']);
+      $this->modeloLogin->__SET('foto', $_POST['txtFotoFile']);
     }
 
     $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();
