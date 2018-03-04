@@ -127,3 +127,34 @@
 
       </div>
 
+    <?php if(isset($ok) && $ok == true): ?>
+        <script>
+          $(document).ready(function(){
+
+            swal({
+              title: 'Registro exitoso',
+              type: 'success',
+              confirmButton: "#3CB371",
+              confirmButtonText: "Aceptar",
+              closeOnConfirm: false,
+              closeOnCancel: false,
+            });
+          });
+        </script>
+    <?php endif; ?>
+
+        <?php if(isset($ok) && $ok == false): ?>
+        <script>
+          $(document).ready(function(){
+
+            swal({
+              title: 'Error en el registro',
+              type: 'error',
+              confirmButton: "#3CB371",
+              confirmButtonText: "Aceptar",
+              closeOnConfirm: false,
+              closeOnCancel: false,
+            });
+          });
+        </script>
+    <?php endif; ?>

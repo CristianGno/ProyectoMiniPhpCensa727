@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?php echo URL ?>bootstrap/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="<?php echo URL ?>bootstrap/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo URL ?>bootstrap/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?php echo URL ?>css/sweetalert.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,6 +35,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="<?php echo URL ?>bootstrap/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="<?php echo URL ?>bootstrap/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo URL ?>bootstrap/dist/js/adminlte.min.js"></script>
+<script src="<?php echo URL ?>bootstrap/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo URL ?>bootstrap/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="<?php echo URL ?>bootstrap/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="<?php echo URL ?>bootstrap/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="<?php echo URL ?>bootstrap/dist/js/demo.js"></script>
+<script src="<?php echo URL ?>js/sweetalert.min.js"></script>
+<!-- page script -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

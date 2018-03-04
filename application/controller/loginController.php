@@ -79,11 +79,13 @@ private $modeloLogin;
 
       $usuario = $this->modeloLogin->registrarUsuario();
 
-      if ($persona && $usuario) {
-        echo "Registro exitoso";
+     /* if ($persona && $usuario) {
+        $ok = true;
       } else {
-        echo "Error";
-      }
+        $ok = false;
+      }*/
+
+      $ok = ($persona && $usuario) ? true : false;
     }
 
     $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();
