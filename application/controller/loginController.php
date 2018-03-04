@@ -67,11 +67,9 @@ private $modeloLogin;
 
       if($persona = $this->modeloLogin->registrarPersona() == true){
 
-        $ultimoId = $this->modeloLogin->ultimoIdPersona();
-        foreach ($ultimoId as $value) {
-          $ultimoIdValue = $value['ultimoIdPersona'];
-        }
+        $ultimoIdValue = $this->modeloLogin->ultimoIdPersona(); 
       }
+      
       $this->modeloLogin->__SET('idPersona', $ultimoIdValue);
       $this->modeloLogin->__SET('usuario', $_POST['txtUsuario']);
       $this->modeloLogin->__SET('clave', trim(sha1($_POST['txtClave'])));

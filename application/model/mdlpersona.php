@@ -62,7 +62,11 @@
       $sql = "SELECT MAX(IdPersona) AS ultimoIdPersona FROM personas";
       $query = $this->db->prepare($sql);
       $query->execute();
-      return $query->fetchAll( PDO::FETCH_ASSOC );
+      $ultimoId = $query->fetchAll( PDO::FETCH_ASSOC );
+      foreach ($ultimoId as $value) {
+          $ultimoIdValue = $value['ultimoIdPersona'];
+      }
+      return $ultimoIdValue;
     }
 
   }
