@@ -138,7 +138,15 @@
               confirmButtonText: "Aceptar",
               closeOnConfirm: false,
               closeOnCancel: false,
-            });
+            }, 
+
+            function(isConfirm){
+              if (isConfirm) {
+                window.location = url + '/loginController/listarUsuarios';
+              }
+            }
+
+            );
           });
         </script>
     <?php endif; ?>

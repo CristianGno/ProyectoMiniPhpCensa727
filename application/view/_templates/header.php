@@ -53,6 +53,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="<?php echo URL ?>bootstrap/dist/js/demo.js"></script>
 <script src="<?php echo URL ?>js/sweetalert.min.js"></script>
 <!-- page script -->
+
+<script>
+  var url = "<?php echo URL ?>";
+</script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
