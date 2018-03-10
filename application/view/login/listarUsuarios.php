@@ -151,8 +151,10 @@
                       </select>
                     </div>
 
-                   <div class="form-group">
-                     <img id="imgUsuario" class="img-responsive">
+                   <div class="form-group row">
+                     <div class="col-md-8 col-md-offset-2">
+                       <img id="imgUsuario" class="img-responsive">
+                     </div>
                    </div>
 
                     <div class="form-group row">
@@ -205,8 +207,6 @@
 
 <script>
   function datosUsuario(id){
-    
-
     $.ajax({
       url: '<?= URL ?>loginController/datosUsuario',
       type: 'POST',
@@ -224,8 +224,26 @@
         $('input[name=txtDireccion]').val(value.Direccion);
         $('#imgUsuario').attr('src', url + 'bootstrap/dist/img/' + value.Foto);
         $('select[name=TipoDocumento]').val(value.IdTipoDocumento)
-        $('select[name=Rol]').val(value.IdRol)
+        $('select[name=Rol]').val(value.IdRol);
+        $('input[name=txtFotoFile]').val(value.Foto);
       });
     });
   }
+
+
+  $(document).ready(function(){
+      $('#value_file').change(function(){
+          var name = $(this).val();
+
+          if(name.match(/fakepath/)){
+            file = name.replace(/C:\\fakepath\\/, '');
+          }
+          var src = url + "bootstrap/dist/img/" + file;
+          $('#txtFotoFile').val(file);
+          $('#imgUsuario').removeAttr("src");
+          $('#imgUsuario').attr("src", src);
+          $('#txtFoto').text(file)
+
+      });
+  });
 </script>
