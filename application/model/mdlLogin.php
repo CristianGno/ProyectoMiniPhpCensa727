@@ -92,4 +92,34 @@ class mdlLogin extends mdlPersona
       return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function modificarUsuario(){
+      $sql = "UPDATE personas AS P 
+              INNER JOIN usuario AS U
+              ON P.IdPersona = U.IdPersona
+              SET P.Documento = ?,
+              P.IdTipoDocumento = ?,
+              P.Nombres = ?,
+              P.Apellidos = ?,
+              P.Correo = ?,
+              P.Celular = ?,
+              P.Direccion = ?,
+              U.Foto = ?,
+              U.IdRol = ?
+              WHERE U.IdUsuario = ?";
+
+      $query = $this->db->prepare($sql);
+      $query->bindParam( 1, $this->documento );
+      $query->bindParam( 2, $this->idTipoDocumento  );
+      $query->bindParam( 3, $this->nombres  );
+      $query->bindParam( 4, $this->apellidos  );
+      $query->bindParam( 5, $this->correo  );
+      $query->bindParam( 6, $this->celular  );
+      $query->bindParam( 7, $this->direccion  );
+      $query->bindParam( 8, $this->foto  );
+      $query->bindParam( 9, $this->idRol  );
+      $query->bindParam( 10, $this->idUsuario );
+
+      return $query->execute();
+    }
+
   }

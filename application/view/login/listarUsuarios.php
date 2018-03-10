@@ -195,7 +195,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar cambios</button>
+            <button type="submit" name="btnEditar" class="btn btn-primary">Guardar cambios</button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -247,3 +247,45 @@
       });
   });
 </script>
+
+
+
+<?php if(isset($_up) && $_up == true): ?>
+  <script>
+    $(document).ready(function(){
+
+      swal({
+        title: 'Se actualizó con éxito',
+        type: 'success',
+        confirmButton: "#3CB371",
+        confirmButtonText: "Aceptar",
+        closeOnConfirm: false,
+        closeOnCancel: false,
+      }, 
+
+      function(isConfirm){
+        if (isConfirm) {
+          window.location = url + '/loginController/listarUsuarios';
+        }
+      }
+
+      );
+    });
+  </script>
+<?php endif; ?>
+
+<?php if(isset($_up) && $_up == false): ?>
+  <script>
+    $(document).ready(function(){
+
+      swal({
+        title: 'Error al actualizar',
+        type: 'error',
+        confirmButton: "#3CB371",
+        confirmButtonText: "Aceptar",
+        closeOnConfirm: false,
+        closeOnCancel: false,
+      });
+    });
+  </script>
+<?php endif; ?>

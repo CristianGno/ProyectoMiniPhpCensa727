@@ -97,6 +97,25 @@ private $modeloLogin;
 
   public function listarUsuarios(){
 
+    if(isset($_POST['btnEditar'])){
+      // var_dump($_POST);
+      $this->modeloLogin->__SET('documento', $_POST['txtDocumento']);
+      $this->modeloLogin->__SET('idTipoDocumento', $_POST['TipoDocumento']);
+      $this->modeloLogin->__SET('nombres', $_POST['txtNombres']);
+      $this->modeloLogin->__SET('apellidos', $_POST['txtApellidos']);
+      $this->modeloLogin->__SET('correo', $_POST['txtCorreo']);
+      $this->modeloLogin->__SET('celular', $_POST['txtCelular']);
+      $this->modeloLogin->__SET('direccion', $_POST['txtDireccion']);
+      $this->modeloLogin->__SET('foto', $_POST['txtFotoFile']);
+      $this->modeloLogin->__SET('idRol', $_POST['Rol']);
+      $this->modeloLogin->__SET('idUsuario', $_POST['IdUsuario']);
+
+      $_up = $this->modeloLogin->modificarUsuario() 
+                                  ? true
+                                  : false;
+    }
+
+
     $usuarios = $this->modeloLogin->listarUsuarios();
     $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();
     $roles = $this->modeloLogin->listarRoles();
