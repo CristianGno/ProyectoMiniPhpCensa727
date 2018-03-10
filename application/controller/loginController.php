@@ -98,9 +98,15 @@ private $modeloLogin;
   public function listarUsuarios(){
 
     $usuarios = $this->modeloLogin->listarUsuarios();
+    $tiposDocumento = $this->modeloLogin->listarTiposDocumentos();
+    $roles = $this->modeloLogin->listarRoles();
     require APP.'view/_templates/header.php';
     require APP.'view/login/listarUsuarios.php';
     require APP.'view/_templates/footer.php';
+  }
+
+  public function datosUsuario(){
+    echo json_encode($this->modeloLogin->usuarioId($_POST['id']));
   }
 
 }

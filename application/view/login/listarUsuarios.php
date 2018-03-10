@@ -1,5 +1,3 @@
-
-
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">Listado de usuarios</h3>
@@ -85,6 +83,8 @@
                   <div class="row">
                     <div class="col-md-6">
 
+                      <input name="IdUsuario" type="hidden" id="IdUsuario">
+
                       <div class="form-group">
                         <label>Tipo Documento</label>
                         <select name="TipoDocumento" class="form-control">
@@ -151,15 +151,9 @@
                       </select>
                     </div>
 
-                    <div class="form-group">
-                      <label>Clave</label>
-                      <input type="text" name="txtClave" class="form-control" value="">
-                    </div>
-
-                    <div class="form-group">
-                      <label>Confimar Clave</label>
-                      <input type="password" name="txtConfClave" class="form-control" value="">
-                    </div>
+                   <div class="form-group">
+                     <img id="imgUsuario" class="img-responsive">
+                   </div>
 
                     <div class="form-group row">
                       <br>
@@ -208,3 +202,30 @@
       <!-- /.modal-dialog -->
     </div>
 <!-- /.modal -->
+
+<script>
+  function datosUsuario(id){
+    
+
+    $.ajax({
+      url: '<?= URL ?>loginController/datosUsuario',
+      type: 'POST',
+      dataType: 'json',
+      data: {'id': id}
+    }).done(function(response){
+      $.each(response, function(index, value){
+        $('input[name=IdUsuario]').val(value.IdUsuario);
+        $('input[name=txtCorreo]').val(value.Correo);
+        $('input[name=txtDocumento]').val(value.Documento);
+        $('input[name=txtUsuario]').val(value.Usuario);
+        $('input[name=txtNombres]').val(value.Nombres);
+        $('input[name=txtApellidos]').val(value.Apellidos);
+        $('input[name=txtCelular]').val(value.Celular);
+        $('input[name=txtDireccion]').val(value.Direccion);
+        $('#imgUsuario').attr('src', url + 'bootstrap/dist/img/' + value.Foto);
+        $('select[name=TipoDocumento]').val(value.IdTipoDocumento)
+        $('select[name=Rol]').val(value.IdRol)
+      });
+    });
+  }
+</script>

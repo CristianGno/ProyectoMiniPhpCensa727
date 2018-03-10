@@ -50,6 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="<?php echo URL ?>bootstrap/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo URL ?>bootstrap/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="<?php echo URL ?>bootstrap/bower_components/select2/dist/js/select2.js"></script>
 <script src="<?php echo URL ?>bootstrap/dist/js/demo.js"></script>
 <script src="<?php echo URL ?>js/sweetalert.min.js"></script>
 <!-- page script -->

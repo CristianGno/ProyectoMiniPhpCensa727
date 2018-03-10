@@ -78,9 +78,9 @@ class mdlLogin extends mdlPersona
     }
 
     public function usuarioId($id){
-      $sql = "SELECT P.IdPersona, P.Documento, P.Nombres, P.Apellidos, P.IdTipoDocumento, P.Direccion, P.Celular, P.Correo, U.Foto, R.IdRol, R.Rol, U.IdUsuario
+      $sql = "SELECT P.IdPersona, P.Documento, P.Nombres, P.Apellidos, P.IdTipoDocumento, P.Direccion, P.Celular, P.Correo, U.Foto, R.IdRol, R.Rol, U.IdUsuario, U.Usuario
               FROM personas AS P
-              INNER JOIN usuarios AS U
+              INNER JOIN usuario AS U
               ON U.IdPersona = P.IdPersona
               INNER JOIN roles AS R
               ON U.IdRol = R.IdRol
@@ -88,7 +88,8 @@ class mdlLogin extends mdlPersona
 
       $query = $this->db->prepare($sql);
       $query->bindParam(1, $id);
-      return $query->execute()->fetchAll(PDO::FETCH_ASSOC);
+      $query->execute();
+      return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
   }
