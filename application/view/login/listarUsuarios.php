@@ -289,3 +289,20 @@
     });
   </script>
 <?php endif; ?>
+
+
+<script>
+  function cambiarEstado(id){
+    swal({
+      title: "¿Realmente desea cambiar el estado del usuario?",
+      type: "warning",
+      confirmButton: "#3CB371",
+      confirmButtonText:"Aceptar",
+      showCancelButton: true,
+      closeOnConfirm: false,
+      cancelButtonText: "Cancelar",
+      confirmButtonClass: 'btn-danger',
+
+    });
+  }
+</script>
