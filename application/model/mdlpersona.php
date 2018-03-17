@@ -70,15 +70,12 @@
     }
 
     public function cambiarEstado($id){
-      $sql = "UPDATE usuarios
+      $sql = "UPDATE usuario
               SET Estado=(CASE WHEN Estado = 1 THEN 0 ELSE 1 END) 
               WHERE IdUsuario = ?";
-    //   $query = $this->db->prepare($sql);
-    //   $query->bindParam(1, $id);
-    //   return $query->execute();
-    return $query = $this->db->prepare($sql)
-                      ->bindParam(1,$id)
-                      ->execute();
+    $query = $this->db->prepare($sql);
+    $query->bindParam(1, $id);
+    return $query->execute();
     }
 
   }

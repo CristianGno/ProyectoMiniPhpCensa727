@@ -302,7 +302,27 @@
       closeOnConfirm: false,
       cancelButtonText: "Cancelar",
       confirmButtonClass: 'btn-danger',
-
-    });
+    },
+      function(isConfirm){
+        if(isConfirm){
+          $.ajax({
+            type: "POST",
+            url: url + "LoginController/cambiarEstadoUsuario",
+            data: {id: id},
+          }).done(function(respuesta){
+            if(respuesta == 1){
+              sweetAlert("Estado cambiado");
+              setTimeout(function(){
+                 window.location = url + "loginController/listarUsuarios";
+               }, 1000);
+            } else {
+              sweetAlert("Error al cambiar el estado");
+            }
+          }).fail(function(error){
+              console.log(error);
+          });
+        }
+      }
+    );
   }
 </script>

@@ -128,7 +128,7 @@ private $modeloLogin;
     echo json_encode($this->modeloLogin->usuarioId($_POST['id']));
   }
 
-  public function CambiarEstadoUsuario(){
+  public function cambiarEstadoUsuario(){
     $this->modeloLogin->cambiarEstado($_POST['id']);
     echo 1;
   }
